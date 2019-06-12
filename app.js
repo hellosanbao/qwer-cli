@@ -10,7 +10,7 @@ class XzqCli {
   async __init() {
     const argv = await this.__getArgv();
     this.__buildApi(argv.api);
-    // this.__insertApiInfo(argv);
+    this.__insertApiInfo(argv);
   }
   __getArgv() {
     return inquirer
@@ -41,12 +41,12 @@ class XzqCli {
             done(null, true);
           }
         },
-        // {
-        //   type: "list",
-        //   name: "safe",
-        //   message: '请选择安全等级',
-        //   choices: ['Anonym', 'User']
-        // }
+        {
+          type: "list",
+          name: "safe",
+          message: '请选择安全等级',
+          choices: ['Anonym', 'User']
+        }
       ]);
   }
   __insertApiInfo(argv) {
